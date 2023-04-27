@@ -1,6 +1,7 @@
 import express, { application } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import testController from './controllers/test.controller';
 //import UserController from './controllers/usuario.controller';
 const app = express();
 app.use(cors({
@@ -16,12 +17,6 @@ app.use((err: any, req: any, res: any, next: any) => {
         next();
     }
 });
-app.post("/", (req, res) => {
-    res.send("Hola Mundo! (POST)");
-})
-app.get("/test", (req, res) => {
-    var tipo = "GET";
-    res.send("Hola Mundo! (GET)");
-})
+app.get('/test', testController.test)
 //app.get('/api/usuario/test',UserController.test);
 export default app;

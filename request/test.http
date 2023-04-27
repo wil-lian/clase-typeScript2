@@ -7,5 +7,6 @@ content-type: application/json
 }
 
 ### este es el servicio get
+### estos son metadatos datos sobre otros datos
 GET http://localhost:5000/test
 content-type: application/json
