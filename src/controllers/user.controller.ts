@@ -7,7 +7,8 @@ class UserController {
 
 
     public async Obtener(req: Request, res: Response) {
-        res.send("")
+        const lista = await repository.find();
+        res.send(lista)
     }
     public async Crear(req: Request, res: Response) {
         const users: IUser = req.body;
